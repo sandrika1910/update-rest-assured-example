@@ -7,7 +7,8 @@ import com.koroyan.restassuredexample.pojos.response.Office;
 import com.koroyan.restassuredexample.utils.DateUtils;
 
 import java.text.ParseException;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
 
 public class PersonResultData {
     private final HashMap<String, FindPersonResult> personResults = new HashMap<String, FindPersonResult>() {

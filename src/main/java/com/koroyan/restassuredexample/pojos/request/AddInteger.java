@@ -10,7 +10,8 @@ public class AddInteger {
     private int arg1;
     private int arg2;
 
-    public AddInteger(){}
+    public AddInteger() {
+    }
 
     public AddInteger(int arg1, int arg2) {
         this.arg1 = arg1;

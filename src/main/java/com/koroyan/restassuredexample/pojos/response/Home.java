@@ -13,7 +13,8 @@ public class Home {
     private String state;
     private int zip;
 
-    public Home(){}
+    public Home() {
+    }
 
     public Home(String street, String city, String state, int zip) {
         this.street = street;

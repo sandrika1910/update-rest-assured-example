@@ -2,9 +2,7 @@ package com.koroyan.restassuredexample.utils;
 
 
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -18,14 +16,14 @@ public class XmlUtils {
 
     public static String path = "src/main/resources/request.xml";
 
-    public static void setValue(Object ...params) {
+    public static void setValue(Object... params) {
         for (int i = 0; i < params.length - 1; i += 2) {
             try {
                 DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
                 DocumentBuilder db = dbf.newDocumentBuilder();
                 Document doc = db.parse(path);
                 Node node = doc.getElementsByTagName(String.valueOf(params[i])).item(0);
-                node.setTextContent(String.valueOf(params[i+1]));
+                node.setTextContent(String.valueOf(params[i + 1]));
                 TransformerFactory tf = TransformerFactory.newInstance();
                 Transformer transformer = tf.newTransformer();
                 DOMSource src = new DOMSource(doc);

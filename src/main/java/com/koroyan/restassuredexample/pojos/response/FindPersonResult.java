@@ -17,7 +17,8 @@ public class FindPersonResult {
     private FavoriteColors favoriteColors;
     private int age;
 
-    public FindPersonResult(){}
+    public FindPersonResult() {
+    }
 
     public FindPersonResult(String name,
                             String SSN,
@@ -35,37 +36,13 @@ public class FindPersonResult {
         this.age = age;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSSN(String SSN) {
-        this.SSN = SSN;
-    }
-
-    public void setDOB(Date DOB) {
-        this.DOB = DOB;
-    }
-
-    public void setHome(com.koroyan.restassuredexample.pojos.response.Home home) {
-        this.home = home;
-    }
-
-    public void setOffice(com.koroyan.restassuredexample.pojos.response.Office office) {
-        this.office = office;
-    }
-
-    public void setFavoriteColors(com.koroyan.restassuredexample.pojos.response.FavoriteColors favoriteColors) {
-        this.favoriteColors = favoriteColors;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     @XmlElement(name = "Name")
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @XmlElement(name = "SSN")
@@ -73,9 +50,17 @@ public class FindPersonResult {
         return SSN;
     }
 
+    public void setSSN(String SSN) {
+        this.SSN = SSN;
+    }
+
     @XmlElement(name = "DOB")
     public Date getDOB() {
         return DOB;
+    }
+
+    public void setDOB(Date DOB) {
+        this.DOB = DOB;
     }
 
     @XmlElement(name = "Home")
@@ -83,9 +68,17 @@ public class FindPersonResult {
         return home;
     }
 
+    public void setHome(com.koroyan.restassuredexample.pojos.response.Home home) {
+        this.home = home;
+    }
+
     @XmlElement(name = "Office")
     public Office getOffice() {
         return office;
+    }
+
+    public void setOffice(com.koroyan.restassuredexample.pojos.response.Office office) {
+        this.office = office;
     }
 
     @XmlElement(name = "FavoriteColors")
@@ -93,9 +86,17 @@ public class FindPersonResult {
         return favoriteColors;
     }
 
+    public void setFavoriteColors(com.koroyan.restassuredexample.pojos.response.FavoriteColors favoriteColors) {
+        this.favoriteColors = favoriteColors;
+    }
+
     @XmlElement(name = "Age")
     public int getAge() {
         return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override

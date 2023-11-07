@@ -12,7 +12,8 @@ import javax.xml.bind.annotation.XmlType;
 public class FindPersonResponse {
     private FindPersonResult findPersonResult;
 
-    public FindPersonResponse(){}
+    public FindPersonResponse() {
+    }
 
     public FindPersonResponse(FindPersonResult findPersonResult) {
         this.findPersonResult = findPersonResult;

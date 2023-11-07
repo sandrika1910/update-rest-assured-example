@@ -4,14 +4,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(namespace = "http://schemas.xmlsoap.org/soap/envelope/",propOrder = {"header","body"})
+@XmlType(namespace = "http://schemas.xmlsoap.org/soap/envelope/", propOrder = {"header", "body"})
 @XmlRootElement(name = "soapenv:Envelope")
 public class Envelope {
-    public static class Header{}
     private Header header;
     private Body body;
-
-    public Envelope(){}
+    public Envelope() {
+    }
 
     public Envelope(Header header, Body body) {
         this.header = header;
@@ -34,5 +33,8 @@ public class Envelope {
 
     public void setBody(Body body) {
         this.body = body;
+    }
+
+    public static class Header {
     }
 }

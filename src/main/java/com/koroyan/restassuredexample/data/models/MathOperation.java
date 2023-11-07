@@ -9,12 +9,12 @@ public class MathOperation {
         this.arg2 = arg2;
     }
 
-    public int addResult(){
-        return arg1+arg2;
+    public int addResult() {
+        return arg1 + arg2;
     }
 
-    public int divideResult(){
-        return arg1/arg2;
+    public int divideResult() {
+        return arg1 / arg2;
     }
 
     public int getArg1() {

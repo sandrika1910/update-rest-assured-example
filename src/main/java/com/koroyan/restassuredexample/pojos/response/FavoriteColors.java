@@ -10,7 +10,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class FavoriteColors {
     private String favoriteColorsItem;
 
-    public FavoriteColors(){}
+    public FavoriteColors() {
+    }
+
     public FavoriteColors(String favoriteColorsItem) {
         this.favoriteColorsItem = favoriteColorsItem;
     }

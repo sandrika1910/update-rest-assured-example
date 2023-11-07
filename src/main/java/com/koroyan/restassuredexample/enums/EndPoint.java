@@ -5,7 +5,7 @@ public enum EndPoint {
 
     private final String value;
 
-   EndPoint(String value) {
+    EndPoint(String value) {
         this.value = value;
     }
 

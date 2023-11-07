@@ -13,7 +13,8 @@ public class Office {
     private String state;
     private int zip;
 
-    public Office(){}
+    public Office() {
+    }
 
     public Office(String street, String city, String state, int zip) {
         this.street = street;

@@ -1,15 +1,17 @@
 package com.koroyan.restassuredexample.steps;
 
+import com.koroyan.restassuredexample.data.common.CommonData;
 import com.koroyan.restassuredexample.enums.EndPoint;
 import com.koroyan.restassuredexample.enums.SOAPAction;
 import com.koroyan.restassuredexample.pojos.request.Envelope;
 import com.koroyan.restassuredexample.pojos.response.FindPersonResult;
+import com.koroyan.restassuredexample.pojos.response.GetListByNameResult;
 import com.koroyan.restassuredexample.services.RequestService;
 import com.koroyan.restassuredexample.utils.StringRequests;
 import com.koroyan.restassuredexample.utils.XmlUtils;
 import io.restassured.RestAssured;
 import org.apache.commons.io.IOUtils;
-
+import org.apache.http.HttpStatus;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -67,7 +69,7 @@ public class Step {
                 .extract().path("Envelope.Body.AddIntegerResponse.AddIntegerResult"));
     }
 
-    public int addIntegerString(int x, int y){
+    public int addIntegerString(int x, int y) {
         String addIntegerRequest = StringRequests.getAddIntegerRequest(x, y);
         return Integer.parseInt(given()
                 .contentType("text/xml;charset=UTF-8").and()
@@ -100,5 +102,23 @@ public class Step {
                 .extract()
                 .body().xmlPath().getObject("Envelope.Body.FindPersonResponse.FindPersonResult",
                         FindPersonResult.class);
+    }
+
+    public GetListByNameResult getListByName(String name) {
+        Envelope getListByNameRequestModel = RequestService.getGetListByNameRequestModel(name);
+        RestAssured.baseURI = EndPoint.BASE_URL.toString();
+        return given()
+                .contentType(CommonData.CONTENT_TYPE)
+                .and().header(CommonData.SOAP_ACTION, SOAPAction.GET_LIST_BY_NAME.toString())
+                .body(getListByNameRequestModel)
+                .when()
+                .post(EndPoint.BASE_URL.toString())
+                .then()
+                .log().ifError()
+                .assertThat()
+                .statusCode(HttpStatus.SC_OK)
+                .extract()
+                .body().xmlPath().getObject("Envelope.Body.GetListByNameResponse.GetListByNameResult",
+                        GetListByNameResult.class);
     }
 }

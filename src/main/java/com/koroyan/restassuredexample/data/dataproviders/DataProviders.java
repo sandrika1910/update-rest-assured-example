@@ -8,8 +8,8 @@ public class DataProviders {
     @DataProvider
     public static Object[][] mathOperations() {
         return new Object[][]{
-                {new MathOperation(1,5)},
-                {new MathOperation(2,9)}
+                {new MathOperation(1, 5)},
+                {new MathOperation(2, 9)}
         };
     }
 }

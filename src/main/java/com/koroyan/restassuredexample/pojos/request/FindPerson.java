@@ -9,7 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 public class FindPerson {
     private String id;
 
-    public FindPerson(){}
+    public FindPerson() {
+    }
+
     public FindPerson(String id) {
         this.id = id;
     }
